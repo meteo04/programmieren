@@ -26,12 +26,12 @@ struct VolumenQuarderEuclid {
 };
 
 struct VolumenKugelPolar {
-    double PhiKugel;
+    double PhiKugel;   //man braucht keine winkel um das volumen einer kugel zu berechnen. radius reicht
     double RadiusKugel;
 };
 
 struct VolumenZylinderPolar {
-    double PhiZylinder;
+    double PhiZylinder;    //siehe kugel
     double RadiusZylinder;
 	double HoeheZylinder;
 };
@@ -77,7 +77,10 @@ struct Volumen make_VolumenZylinder_polare(double rzy, double hzy) {
 // Computes the distance from the given Volumen
 // to the origin of the coordinate system.
 double volume(struct Volumen p);
-
+//die tests für kugel und zylinder werden wahrscheinlich nicht bestanden,
+//weil EPSILON=0.0000001(glaub ich, vielleicht eine null mehr oder weniger)
+//aber pi ist nur auf zwei nachkommastellen genau in dem programm
+//entweder im test explizit mit sachen wie pi*1*1*3 vergleichen, oder pi genauer festlegen
 static void volume_test() {
     // test cases for polar variant
     check_within_d(
@@ -95,7 +98,7 @@ static void volume_test() {
         volume(make_Volumen_euclid(-2.0, 2.0)), 
         0.0, EPSILON);
     check_within_d( 
-        volume(make_Volumen_euclid(-2.0, 2.0)), 
+        volume(make_Volumen_euclid(-2.0, 2.0)), //der quader hat 3 variablen, nicht zwei, daher gibts nen fehler
         8.0, EPSILON);
     check_within_d( 
         volume(make_Volumen_euclid(1.0, 1.0)), 
@@ -107,7 +110,7 @@ static void volume_test() {
         volume(make_VolumenZylinder_polare(0.0, 1.0, 2.0)), 
         6.28, EPSILON);
     check_within_d(
-         volume(make_VolumenZylinder_polare(0.0, 1.0, 2.0)), 
+         volume(make_VolumenZylinder_polare(0.0, 1.0, 2.0)), //hier ist ein argument zu viel, wahrscheinlich hast dus verwechselt
         6.28, EPSILON);
     check_within_d(
         volume(make_VolumenZylinder_polare(2.0, 2.0, 2.0)), 
@@ -118,16 +121,16 @@ static void volume_test() {
 // to the origin of the coordinate system.
 double volume(struct Volumen p) {
     if (p.tag==TVolumenQuarderEuclid) {
-        vol = p.euclid.x * p.euclid.y * p.euclid.z;
+        vol = p.euclid.x * p.euclid.y * p.euclid.z;//bin mir nicht sicher, ob es nicht double vol sein muss(hast die variable vorher initialisiert, kann also auch sein, dass es klappt, kenn die syntax da nicht genau)
 		if (vol < 0) {
 			return vol * (-1);
 		} else {
 			return vol;
 		}
 	}	
-	
+	//für quader berücksichtigst du negative volumina, bei den anderen beiden aber nicht, das sollte man konsistent machen (man könnte es auch bei allen weglassen, haben wir zumindest so)
 	if (p.tag==TVolumenKugelPolar){
-       return (4/3)*p.polar.RadiusKugel*p.polar.RadiusKugel* pi;
+       return (4/3)*p.polar.RadiusKugel*p.polar.RadiusKugel* pi; //die formel ist 4/3 pi r^3(nicht 2)
     }
 	
 	if (p.tag==TVolumenZylinderPolar){
