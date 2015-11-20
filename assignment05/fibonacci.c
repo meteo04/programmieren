@@ -65,8 +65,9 @@ return 0;
 int fibonacci_iterative(int n) {
 int k;
 for(k==0; k<=n; ++k){
-		int w;
-		return w = n + k;	
+
+
+		return  n + k;	
 		k + 1;
 
 }
