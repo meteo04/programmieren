@@ -7,11 +7,11 @@ Run: ./fibonacci
 
 
 
-int Number;
+int n;
 
 static void fibonacci_recursive_test();
 
-int Fibonaccinumber fibonacci_recursive(int Number n);
+int fibonacci_recursive(int n);
 
 //Aufgabe a)
 
@@ -32,7 +32,7 @@ static void fibonacci_recursive_test(){
 	
 //Aufgabe b)
 
-int Fibonaccinumber fibonacci_recursive(int Number n){ 
+int fibonacci_recursive(int n){ 
 	if (n == 0){
 		return 0;
 	} else { 
@@ -74,7 +74,7 @@ i   fib(i)  time_iter [ms]  time_rek [ms]
 */
 
 int main(void) {
-    fibonacci_recursive_testh();
+    fibonacci_recursive_test();
  //   fibonacci_iterative_test();
  //   timing();
  return 0;
