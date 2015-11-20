@@ -4,7 +4,12 @@ Run: ./fibonacci
 */
 
 #include "base.h"
-
+#define own_time_function(f) {\
+	clock_t t = clock();\
+	f;\
+	t = clock() - t;\
+	printf("%g", t * 1000.0 / CLOCKS_PER_SEC);\
+}
 
 void fibonacci_recursive_test();
 
