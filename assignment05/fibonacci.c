@@ -15,13 +15,13 @@ int fibonacci_recursive(int n);
 
 //Aufgabe a)
 
-static void fibonacci_recursive_test(){
-    check_expect_i(fibonacci_recursiv(0), 0);
-    check_expect_i(fibonacci_recursiv(1), 1);
-    check_expect_i(fibonacci_recursiv(2), 1);
-	check_expect_i(fibonacci_recursiv(3), 2);
-	check_expect_i(fibonacci_recursiv(4), 3);
-	check_expect_i(fibonacci_recursiv(5), 5);
+void fibonacci_recursive_test(){
+    check_expect_i(fibonacci_recursive(0), 0);
+    check_expect_i(fibonacci_recursive(1), 1);
+    check_expect_i(fibonacci_recursive(2), 1);
+	check_expect_i(fibonacci_recursive(3), 2);
+	check_expect_i(fibonacci_recursive(4), 3);
+	check_expect_i(fibonacci_recursive(5), 5);
 
 }
 
@@ -35,22 +35,23 @@ static void fibonacci_recursive_test(){
 int fibonacci_recursive(int n){ 
 	if (n == 0){
 		return 0;
-	} else { 
+	} 
 	
-		if (n == 1){
+	if (n == 1){
 			
-				return 1;
+	return 1;
 	
-		} else {
+	} 
 		
-				if (n>= 2){
+	if (n >= 2){
 				
-					return (n - 1) - (n - 2); 
-				}
-		}
-		
-		
+	return (n - 1) + (n - 2); 
 	}
+		
+		
+		
+	
+return 0;	
 }
 
 
