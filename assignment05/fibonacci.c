@@ -5,7 +5,6 @@ Run: ./fibonacci
 
 #include "base.h"
 
-int n;
 
 void fibonacci_recursive_test();
 
@@ -65,12 +64,12 @@ return 0;
 
 int fibonacci_iterative(int n) {
 int k;
-for(k=0; k=5; ++k)
+for(k==0; k<=n; ++k){
+		int w;
+		return w = n + k;	
+		k + 1;
 
-	int w;
-	return w = n + k;	
-	k + 1;
-
+}
 		
 return 0;
 }
