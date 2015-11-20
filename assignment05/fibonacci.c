@@ -7,21 +7,22 @@ Run: ./fibonacci
 
 
 
-int nummber;
+int Number;
 
-int fibonacci_recursive_test()
+static void fibonacci_recursive_test();
 
-int fibonacci_recursiv(int nummber) 
+int Fibonaccinumber fibonacci_recursive(int Number n);
 
 //Aufgabe a)
 
-fibonacci_recursive_test{
-    check_expect_fibonacci(fibonacci_recursiv(0), 0);
-    check_expect_fibonacci(fibonacci_recursiv(1), 1);
-    check_expect_fibonacci(fibonacci_recursiv(2), 1);
-	check_expect_fibonacci(fibonacci_recursiv(3), 2);
-	check_expect_fibonacci(fibonacci_recursiv(4), 3);
-	check_expect_fibonacci(fibonacci_recursiv(5), 5);
+static void fibonacci_recursive_test(){
+    check_expect_i(fibonacci_recursiv(0), 0);
+    check_expect_i(fibonacci_recursiv(1), 1);
+    check_expect_i(fibonacci_recursiv(2), 1);
+	check_expect_i(fibonacci_recursiv(3), 2);
+	check_expect_i(fibonacci_recursiv(4), 3);
+	check_expect_i(fibonacci_recursiv(5), 5);
+
 }
 
 
@@ -31,20 +32,20 @@ fibonacci_recursive_test{
 	
 //Aufgabe b)
 
-int fibonacci_recursive (int nummber){ 
-	if (nummber = 0){
+int Fibonaccinumber fibonacci_recursive(int Number n){ 
+	if (n == 0){
 		return 0;
 	} else { 
 	
-		if (nummber = 1){
+		if (n == 1){
 			
 				return 1;
 	
 		} else {
 		
-				if (nummber >= 2){
+				if (n>= 2){
 				
-					return (nummber - 1) - (nummber - 2); 
+					return (n - 1) - (n - 2); 
 				}
 		}
 		
@@ -73,7 +74,7 @@ i   fib(i)  time_iter [ms]  time_rek [ms]
 */
 
 int main(void) {
-    fibonacci_recursive_test();
+    fibonacci_recursive_testh();
  //   fibonacci_iterative_test();
  //   timing();
  return 0;
