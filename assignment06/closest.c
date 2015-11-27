@@ -46,8 +46,8 @@ static void closest_test(void) {
 	
 	a = da_of_string ("0.0,2.0,3.0");
 	b = da_of_string ("0.1,2.9,0");
-	c = ia_of_string ("0,2,0");
-	check_expect_b(closest (a, b), c); 
+	c = ia_of_string ("0,2,0");//die erwartete ausgabe waere wohl eher [2, 1, 1]
+	check_expect_b(closest (a, b), c); //du solltst wie in der aufgabe steht ia_check_expect benutzen
 	a_free(a);
 	a_free(b);
 	a_free(c);
@@ -64,7 +64,7 @@ static void closest_test(void) {
 	
 	a = da_of_string ("0.0,2.0,3.0");
 	b = da_of_string ("0.1,2.9,0");
-	c = ia_of_string ("0,2,0");
+	c = ia_of_string ("0,2,0");//s. o.
 	check_expect_b(closest (a, b), c); 
 	a_free(a);
 	a_free(b);
@@ -73,7 +73,7 @@ static void closest_test(void) {
 		
 	a = da_of_string ("0.0,2.0,3.0");
 	b = da_of_string ("0.1,2.9,0");
-	c = ia_of_string ("0,2,0");
+	c = ia_of_string ("0,2,0");//s. o.
 	check_expect_b(closest (a, b), c); 
 	a_free(a);
 	a_free(b);
@@ -95,14 +95,18 @@ Array closest(Array a, Array b) {
 
 int n = a_length(a);
 int m = a_length(b);
-double y;
-int j;
-
-
+double y;//du weist y in der funktion nirgends einen wert zu.
+int j;//ueberfluessig, wird schon in der for schleife initialisiert
+//du solltest noch ein rueckgabe array initialisieren.
+//wenn du erstmal von dem ersten element ausgehst (index 0) waere das
+//Array indizes=ia_create(n,0)
+//also n mal(das rueckgabearray muss genau so lang wie a sein) die 0(also der erste index)
 
 			for (int i = 0; i < n; ++i){
 	
 					double e = da_get(a,i);
+                    //ich vermute hier wolltest du y die differenz zum ersten element aus b zuweisen. Also y=fabs(e-da_get(b,0));
+                    
 	
 						for (int j = 0; j < m; ++j){
 		
@@ -110,20 +114,25 @@ int j;
 		
 							double x = e - f;
 		
-							fabs(x);
+							fabs(x);//den wert solltest du schon zwischenspeichern. fabs gibt den betrag zurueck, aendert aber nichts an x. hier also eher z=fabs(x);
 		
 		
 									if (x<y) {
-											x = y;
-									}else
-											x = x;
+											x = y;//wohl eher y=x, du moechtest ja die kleinere differenz uebernehmen
+                                            //in dem fall muss auch indizes aktualisiert werden(du hast ja einen besseren wert gefunden)
+                                            //ia_set(indizes,i,j);
+									}else//klammern fehlen
+											x = x;//ueberfluessig
 									
 						}
  
-			return ia_create(n,j);	
+			return ia_create(n,j);//ia_create erstellt einen neuen array, der mit j mal n gefuellt ist. ich glaube nicht, dass du das da wolltest.
+                                  //ausserdem sollte de rueckgabe NACH der schleife stattfinden, nicht mittendrin
+                                  //die fehlermeldung hast du vermutlich bekommen, weil du hier keine vernuenftige rueckgabe hattest
 			}
 
-
+//stattdessen jetzt indizes zurueckgeben
+//return indizes;    
 }
 
 int main(void) {
