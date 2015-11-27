@@ -11,8 +11,8 @@ int main(void) {
 	printdln(3.141592654);
 	printsln("hello world");
 	
-	printiln(i_rnd(100));
-	printdln(d_rnd(3.14));
+//	printiln(i_rnd(100));
+//	printdln(d_rnd(3.14));
 	
 	return 0;
 }

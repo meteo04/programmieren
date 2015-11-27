@@ -1,6 +1,7 @@
 var searchData=
 [
   ['b',['b',['../struct_any_pair.html#acc0eb51db6e54cdca2243b39e501a49e',1,'AnyPair::b()'],['../struct_any_triple.html#a4bfc48c2953fb8e1ac52f0b2c0f6bb11',1,'AnyTriple::b()'],['../struct_string_pair.html#a92b2849279d61aeb378b741f6f8ed78b',1,'StringPair::b()'],['../struct_string_triple.html#aeb268d719ff5a784443a9ec9b9283cdd',1,'StringTriple::b()']]],
+  ['b_5frnd',['b_rnd',['../base_8h.html#aae790869c7e2ee86b9a0fa6d9a04adf7',1,'base.h']]],
   ['ba_5fassert_5felement_5fsize',['ba_assert_element_size',['../byte__array_8h.html#a4a1dfe8cfab0f11a66f1e8e9f0f19fd3',1,'byte_array.h']]],
   ['ba_5fcheck_5fexpect',['ba_check_expect',['../byte__array_8h.html#aaf8adc9ffc660f0ab6543343ae70dcb6',1,'byte_array.h']]],
   ['ba_5fcheck_5fexpect_5ffile_5fline',['ba_check_expect_file_line',['../byte__array_8h.html#a0b40005b2feb1eae20ac8a673093ead3',1,'byte_array.h']]],
@@ -60,6 +61,7 @@ var searchData=
   ['base_5fcheck_5fexpect_5fca',['base_check_expect_ca',['../base_8h.html#aa4b34323581ea1a0efb6490aa5994d2d',1,'base.h']]],
   ['base_5fcheck_5fexpect_5fi',['base_check_expect_i',['../base_8h.html#af0f717a0aaa1c47b28618e228adfa913',1,'base.h']]],
   ['base_5fcheck_5fexpect_5fs',['base_check_expect_s',['../base_8h.html#a65d865d1f798291ba64e30e4f8817221',1,'base.h']]],
+  ['base_5fcheck_5fexpect_5fstruct',['base_check_expect_struct',['../base_8h.html#a89890c317dadcbab23311cbfc2580a06',1,'base.h']]],
   ['base_5fcheck_5fwithin_5fd',['base_check_within_d',['../base_8h.html#a42875384f71a3c537d06f442344d7401',1,'base.h']]],
   ['base_5fcheck_5fwithin_5fi',['base_check_within_i',['../base_8h.html#acbeea7f6e811e89f09dc4d49d1bba005',1,'base.h']]],
   ['base_5fcount_5fcheck',['base_count_check',['../base_8h.html#a47615cf85d521f757f64d0cb052c1a80',1,'base.h']]],
